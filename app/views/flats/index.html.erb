@@ -1,0 +1,29 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1530767083184-5b59bbb26065?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=747&q=80);">
+  <div class="container">
+    <div class="text-center">
+      <h1><strong>AirBnB</strong></h1>
+      <p>Book unique homes and unique experiences</p>
+      <a class="btn btn-flat" href="#">Book now</a>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h3>All our Flats</h3>
+    </div>
+    <div class="col-12">
+      <p>We found <%=@flats.length %> flats on our website.</p>
+    </div>
+  </div>
+  <div class="cards">
+    <% @flats.each do |flat| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    url(<%= flat.picture_url %>)">
+        <h2><%=flat.name  %></h2>
+        <p><%=flat.description%></p>
+        <p><%=flat.price_per_night %></p>
+        <p><%=flat.number_of_guests %></p>
+      </div>
+    <% end %>
+  </div>
